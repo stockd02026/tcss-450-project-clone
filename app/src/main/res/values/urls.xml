@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="add_login">https://stockd-services-backend.herokuapp.com/login</string>
+
+    <string name="add_register">https://stockd-services-backend.herokuapp.com/register</string>
+
+</resources>
