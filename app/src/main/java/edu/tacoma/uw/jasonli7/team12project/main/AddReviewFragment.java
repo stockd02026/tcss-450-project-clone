@@ -16,21 +16,22 @@ import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 import edu.tacoma.uw.jasonli7.team12project.model.Review;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddReviewFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 3rd Aug 2020.
+ *
+ * A fragment add new review data.
  */
 public class AddReviewFragment extends Fragment {
     private AddReviewFragment.AddReviewListener mAddReviewListener;
     public interface AddReviewListener {
         public  void  addReview(Review review);
     }
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -46,7 +47,6 @@ public class AddReviewFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment CourseAddFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static AddReviewFragment newInstance(String param1, String param2) {
         AddReviewFragment fragment = new AddReviewFragment();
         Bundle args = new Bundle();
@@ -55,18 +55,17 @@ public class AddReviewFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+    //commented calls are to connect button to AddReviewActivity.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //mAddReviewListener = (AddReviewListener) getActivity();
 
     }
-
+    //commented calls are to connect button to AddReviewActivity.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add_review, container
                 , false);
         getActivity().setTitle("Signed in as: " +InfoHolder.InfoPass.getmEmail());

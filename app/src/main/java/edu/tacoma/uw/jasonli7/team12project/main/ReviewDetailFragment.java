@@ -19,10 +19,13 @@ import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 import edu.tacoma.uw.jasonli7.team12project.model.Review;
 
 /**
- * A fragment representing a single Review detail screen.
- * This fragment is either contained in a {@link ReviewListActivity}
- * in two-pane mode (on tablets) or a {@link ReviewDetailActivity}
- * on handsets.
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 4th Aug 2020.
+ *
+ * A fragment for displaying review data.
  */
 public class ReviewDetailFragment extends Fragment {
     /**
@@ -47,10 +50,6 @@ public class ReviewDetailFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-       // if (getArguments().containsKey(ARG_ITEM_ID)) {
-            // Load the dummy content specified by the fragment
-            // arguments. In a real-world scenario, use a Loader
-            // to load content from a content provider.
             mItem = InfoHolder.InfoPass.getmReview();
 
             Activity activity = this.getActivity();
@@ -66,7 +65,6 @@ public class ReviewDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.review_detail, container, false);
 
-        // Show the dummy content as text in a TextView.
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.review_detail)).setText(mItem.getmReview());
         }

@@ -21,10 +21,17 @@ import java.net.URL;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
 import edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity;
-
+/**
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 2nd Aug 2020.
+ *
+ * An activity to process and communicate login data.
+ */
 public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginFragmentListener {
 private SharedPreferences mSharedPreferences;
-// private static final android.R.attr R = R;
         private JSONObject mLogin;
         private String mUserName;
 @Override
@@ -33,19 +40,18 @@ protected void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.activity_sign_in);
         mSharedPreferences = getSharedPreferences(getString(R.string.LOGIN_PREFS),
         Context.MODE_PRIVATE);
-      //  if (!mSharedPreferences.getBoolean(getString(R.string.LOGGEDIN), false)) {
         getSupportFragmentManager().beginTransaction()
         .add(R.id.sign_in_fragment_id, new LoginFragment())
         .commit();
-       // } else {
-      //  Intent intent = new Intent(this, MainMenuActivity.class);
-      //  startActivity(intent);
-     //   finish();
-     //   }
-        //getSupportFragmentManager().beginTransaction().replace(R.id.sign_in_fragment_id, new LoginFragment()).commit();
-        }
+    }
 
-@Override
+        /**
+         * Calls server /login.
+         *
+         * @param email
+         * @param pwd
+         */
+        @Override
 public void login(String email, String pwd) {
         StringBuilder url = new StringBuilder(getString(R.string.add_login));
 

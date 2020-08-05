@@ -14,7 +14,15 @@ import android.widget.Button;
 
 import edu.tacoma.uw.jasonli7.team12project.authenticate.RegisterActivity;
 import edu.tacoma.uw.jasonli7.team12project.authenticate.SignInActivity;
-
+/**
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 3rd Aug 2020.
+ *
+ * A Point of entry activity that connects to SignInActivity and RegisterActivity.
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     Button mLoginButton;
     Button mRegButton;
@@ -25,8 +33,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mLoginButton =findViewById(R.id.login);
         mLoginButton.setOnClickListener(this);
-       // mRegButton =findViewById(R.id.regester);
-       // mRegButton.setOnClickListener(this);
 
     }
     @Override
@@ -34,6 +40,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         getMenuInflater().inflate(R.menu.menu_main,menu);
         return true;
     }
+
+    /**
+     * Go to SignInActivity
+     *
+     * @param view
+     */
     @Override
 public void onClick(View view) {
         if (view.getId() == R.id.login) {
@@ -45,6 +57,12 @@ public void onClick(View view) {
         }
     }
 
+    /**
+     * Go to RegisterActivity.
+     *
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.action_logout) {

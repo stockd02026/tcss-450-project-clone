@@ -15,26 +15,28 @@ import edu.tacoma.uw.jasonli7.team12project.R;
 import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link LoginFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 2nd Aug 2020.
+ *
+ * A fragment to handle login data.
  */
 public class LoginFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private LoginFragmentListener mLoginFragmentListener;
     public interface  LoginFragmentListener {
         public void login(String email, String pwd);
     }
-    // TODO: Rename and change types of parameters
+
     private String mParam1;
     private String mParam2;
 
     public LoginFragment() {
-        // Required empty public constructor
+
     }
 
     /**
@@ -45,7 +47,6 @@ public class LoginFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment LoginFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static LoginFragment newInstance(String param1, String param2) {
         LoginFragment fragment = new LoginFragment();
         Bundle args = new Bundle();
@@ -59,12 +60,18 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            //mParam1 = getArguments().getString(ARG_PARAM1);
-            // mParam2 = getArguments().getString(ARG_PARAM2);
             mLoginFragmentListener = (LoginFragmentListener) getActivity();
         }
     }
 
+    /**
+     * Contains listener.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -88,10 +95,8 @@ public class LoginFragment extends Fragment {
                     pwdText.requestFocus();
                 }
                 mLoginFragmentListener.login(email, pwd);
-                // mLoginFragmentListener.login(emailText.getText().toString(), pwdText.getText().toString());
             }
         });
-        // Inflate the layout for this fragment
         return view;
     }
 }

@@ -22,7 +22,15 @@ import java.net.URL;
 import edu.tacoma.uw.jasonli7.team12project.R;
 import edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity;
 import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
-
+/**
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 2nd Aug 2020.
+ *
+ * An activity to process and communicate register data.
+ */
 public class RegisterActivity extends AppCompatActivity implements RegisterFragment.RegisterFragmentListener {
     private SharedPreferences mSharedPreferences;
     private JSONObject mAddUser;
@@ -40,6 +48,15 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
                 .commit();
     }
 
+    /**
+     * Calls server /register.
+     *
+     * @param first
+     * @param last
+     * @param email
+     * @param userName
+     * @param pwd
+     */
     @Override
     public void register(String first, String last, String email, String userName, String pwd) {
         StringBuilder url = new StringBuilder(getString(R.string.add_register));
@@ -59,12 +76,20 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
             Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
+    /**
+     * Helper method calls DeviceListActivity.
+     */
     private void goToMain() {
         InfoHolder.InfoPass.setEmail(mUserName);
         Intent intent = new Intent(this, DeviceListActivity.class);
         startActivity(intent);
         finish();
     }
+
+    /**
+     * Calls server /register
+     */
     private class AddUserAsyncTask extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... urls) {
@@ -79,8 +104,6 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
                     urlConnection.setDoOutput(true);
                     OutputStreamWriter wr =
                             new OutputStreamWriter(urlConnection.getOutputStream());
-
-                    // For Debugging
 
                     wr.write(mAddUser.toString());
                     wr.flush();

@@ -15,22 +15,23 @@ import edu.tacoma.uw.jasonli7.team12project.model.Device;
 import edu.tacoma.uw.jasonli7.team12project.model.Review;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddDeviceFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Team 12 Group project.
  *
+ * @author Daniel Stocksett.
+ *
+ * @version 3rd Aug 2020.
+ *
+ * A fragment add new device data.
  */
 public class AddDeviceFragment extends Fragment {
     private AddDeviceListener mAddDeviceListener;
     public interface AddDeviceListener {
         public  void  addDevice(Device device);
     }
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
+
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -46,7 +47,6 @@ public class AddDeviceFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment CourseAddFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static AddDeviceFragment newInstance(String param1, String param2) {
         AddDeviceFragment fragment = new AddDeviceFragment();
         Bundle args = new Bundle();
@@ -55,17 +55,16 @@ public class AddDeviceFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
+    //commented code for connecting the buttons to AddDeviceActivity.
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //mAddDeviceListener = (AddDeviceListener) getActivity();
     }
-
+    //commented code for connecting the buttons to AddDeviceActivity.
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add_device, container
                 , false);
         getActivity().setTitle("Add a New Device");

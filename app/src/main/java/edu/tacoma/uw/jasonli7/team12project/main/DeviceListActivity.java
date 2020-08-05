@@ -23,15 +23,17 @@ import edu.tacoma.uw.jasonli7.team12project.model.Device;
 import edu.tacoma.uw.jasonli7.team12project.model.DeviceContent;
 import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
- * An activity representing a list of Devices. This activity
- * has different presentations for handset and tablet-size devices. On
- * handsets, the activity presents a list of items, which when touched,
- * lead to a {@link DeviceDetailActivity} representing
- * item details. On tablets, the activity presents the list of items and
- * item details side-by-side using two vertical panes.
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 3rd Aug 2020.
+ *
+ * An activity that creates a scrolling list of clickable Devices.
  */
 public class DeviceListActivity extends AppCompatActivity {
 
@@ -59,10 +61,6 @@ public class DeviceListActivity extends AppCompatActivity {
         });
 
         if (findViewById(R.id.device_detail_container) != null) {
-            // The detail container view will be present only in the
-            // large-screen layouts (res/values-w900dp).
-            // If this view is present, then the
-            // activity should be in two-pane mode.
             mTwoPane = true;
         }
 
@@ -70,7 +68,7 @@ public class DeviceListActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
     }
-
+    //commented code for use with back end implementation.
     private void launchDeviceAddFragment() {
         Intent intent = new Intent(this, AddDeviceActivity.class);
         startActivity(intent);
@@ -137,7 +135,8 @@ public class DeviceListActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mIdView.setText(mValues.get(position).getDeviceName());
-            holder.mContentView.setText(String.valueOf(mValues.get(position).getAvgRate()).substring(0, 3));
+            DecimalFormat format = new DecimalFormat("##.00");
+            holder.mContentView.setText(String.valueOf(format.format(mValues.get(position).getAvgRate())));
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);

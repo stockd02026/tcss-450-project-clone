@@ -5,7 +5,15 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
-
+/**
+ * Team 12 Group project.
+ *
+ * @author Daniel Stocksett.
+ *
+ * @version 2nd Aug 2020.
+ *
+ * A class for creating dummy data.
+ */
 public class DeviceContent {
 
     /**
