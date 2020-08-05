@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.tacoma.uw.jasonli7.team12project">
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +12,40 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.MainMenuActivity"></activity>
+        <activity android:name=".main.AddReviewActivity"></activity>
+        <activity android:name=".main.AddDeviceActivity" />
+        <activity
+            android:name=".main.ReviewListActivity"
+            android:label="@string/title_review_list"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".main.ReviewDetailActivity"
+            android:label="@string/title_review_detail"
+            android:parentActivityName=".main.ReviewListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.tacoma.uw.jasonli7.team12project.main.ReviewListActivity" />
+        </activity>
+        <activity
+            android:name=".main.DeviceListActivity"
+            android:label="@string/title_device_list"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".main.DeviceDetailActivity"
+            android:label="@string/title_device_detail"
+            android:parentActivityName=".main.DeviceListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity" />
+        </activity>
         <activity android:name=".authenticate.RegisterActivity" />
         <activity android:name=".authenticate.SignInActivity">
             <intent-filter>

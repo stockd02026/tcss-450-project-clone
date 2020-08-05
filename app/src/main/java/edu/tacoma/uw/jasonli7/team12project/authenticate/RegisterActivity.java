@@ -20,7 +20,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
-import edu.tacoma.uw.jasonli7.team12project.main.MainMenuActivity;
+import edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity;
+import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 
 public class RegisterActivity extends AppCompatActivity implements RegisterFragment.RegisterFragmentListener {
     private SharedPreferences mSharedPreferences;
@@ -59,7 +60,8 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
         }
     }
     private void goToMain() {
-        Intent intent = new Intent(this, MainMenuActivity.class);
+        InfoHolder.InfoPass.setEmail(mUserName);
+        Intent intent = new Intent(this, DeviceListActivity.class);
         startActivity(intent);
         finish();
     }

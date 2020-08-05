@@ -12,6 +12,7 @@ import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
+import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -77,6 +78,7 @@ public class LoginFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 String email = emailText.getText().toString();
+                InfoHolder.InfoPass.setEmail(email);
                 String pwd = pwdText.getText().toString();
                 if (TextUtils.isEmpty((email)) || !email.contains("@")) {
                     Toast.makeText(v.getContext(), "Invalid email address", Toast.LENGTH_SHORT).show();

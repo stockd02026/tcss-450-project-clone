@@ -4,6 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.MainMenuActivity">
+    tools:context=".main.AddReviewActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/add_Review_fragment_id"   />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

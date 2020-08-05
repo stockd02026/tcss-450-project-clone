@@ -20,7 +20,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
-import edu.tacoma.uw.jasonli7.team12project.main.MainMenuActivity;
+import edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity;
 
 public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginFragmentListener {
 private SharedPreferences mSharedPreferences;
@@ -63,7 +63,7 @@ public void login(String email, String pwd) {
         }
 }
         private void goToMain() {
-                Intent intent = new Intent(this, MainMenuActivity.class);
+                Intent intent = new Intent(this, DeviceListActivity.class);
                 startActivity(intent);
                 finish();
         }
