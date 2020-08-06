@@ -88,7 +88,7 @@ public class RegisterActivity extends AppCompatActivity implements RegisterFragm
     }
 
     /**
-     * Calls server /register
+     * Calls server /register, parses json objects.
      */
     private class AddUserAsyncTask extends AsyncTask<String, Void, String> {
         @Override

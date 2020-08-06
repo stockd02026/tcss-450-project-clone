@@ -34,6 +34,12 @@ import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 public class DeviceDetailActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String ADD_DEVICE = "ADD_DEVICE";
     private Button mBut;
+
+    /**
+     * Does some of the heavy lifting for DeviceFragment.
+     *
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

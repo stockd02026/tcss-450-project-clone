@@ -3,5 +3,7 @@
     <string name="add_login">https://stockd-services-backend.herokuapp.com/login</string>
 
     <string name="add_register">https://stockd-services-backend.herokuapp.com/register</string>
+    <string name="get_devices">https://team12-services-backend.herokuapp.com/Devices</string>
+    <string name="add_devices">https://team12-services-backend.herokuapp.com/adddevices</string>
 
 </resources>

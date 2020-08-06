@@ -32,8 +32,10 @@ import edu.tacoma.uw.jasonli7.team12project.main.DeviceListActivity;
  */
 public class SignInActivity extends AppCompatActivity implements LoginFragment.LoginFragmentListener {
 private SharedPreferences mSharedPreferences;
+
         private JSONObject mLogin;
         private String mUserName;
+
 @Override
 protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,8 +50,8 @@ protected void onCreate(Bundle savedInstanceState) {
         /**
          * Calls server /login.
          *
-         * @param email
-         * @param pwd
+         * @param email passed from fragment by user.
+         * @param pwd   passed from fragment by user.
          */
         @Override
 public void login(String email, String pwd) {
@@ -73,6 +75,10 @@ public void login(String email, String pwd) {
                 startActivity(intent);
                 finish();
         }
+
+        /**
+         * Parses and sends json objects.
+         */
         private class LoginAsyncTask extends AsyncTask<String, Void, String> {
                 @Override
                 protected String doInBackground(String... urls) {

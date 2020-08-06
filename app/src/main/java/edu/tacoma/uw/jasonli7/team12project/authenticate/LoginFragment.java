@@ -28,6 +28,10 @@ public class LoginFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private LoginFragmentListener mLoginFragmentListener;
+
+    /**
+     * Listener interface.
+     */
     public interface  LoginFragmentListener {
         public void login(String email, String pwd);
     }
@@ -65,7 +69,7 @@ public class LoginFragment extends Fragment {
     }
 
     /**
-     * Contains listener.
+     * Contains listener, gathers text from user.
      *
      * @param inflater
      * @param container

@@ -25,9 +25,7 @@ import edu.tacoma.uw.jasonli7.team12project.model.Review;
  */
 public class AddDeviceFragment extends Fragment {
     private AddDeviceListener mAddDeviceListener;
-    public interface AddDeviceListener {
-        public  void  addDevice(Device device);
-    }
+
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -55,32 +53,48 @@ public class AddDeviceFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    //commented code for connecting the buttons to AddDeviceActivity.
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //mAddDeviceListener = (AddDeviceListener) getActivity();
+        mAddDeviceListener = (AddDeviceListener) getActivity();
     }
-    //commented code for connecting the buttons to AddDeviceActivity.
+
+    /**
+     * Gets user input and sends it via the listener to the parser.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add_device, container
                 , false);
         getActivity().setTitle("Add a New Device");
-   /*     final EditText courseIdEditText = v.findViewById(R.id.add_device);
+        final EditText addDev = v.findViewById(R.id.add_device);
         Button addButton = v.findViewById(R.id.btn_add_device);
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String device = courseIdEditText.getText().toString();
+                String devices = addDev.getText().toString();
 
-                Device device = new Device(device, new ArrayList<Review>());
+                Device device = new Device(devices, new ArrayList<Review>());
                 if (mAddDeviceListener != null) {
                     mAddDeviceListener.addDevice(device);
                 }
             }
-        });*/
+        });
         return v;
+    }
+
+    /**
+     * Listener interface.
+     */
+    public interface AddDeviceListener {
+        public  void  addDevice(Device device);
     }
 }

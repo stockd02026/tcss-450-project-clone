@@ -66,7 +66,10 @@ public class ReviewListActivity extends AppCompatActivity {
         assert recyclerView != null;
         setupRecyclerView((RecyclerView) recyclerView);
     }
-    //Commented code for use with backend implementation.
+
+    /**
+     *     Commented code for use with backend implementation.
+     */
     private void launchReviewAddFragment() {
 
             Intent intent = new Intent(this, AddReviewActivity.class);
@@ -84,6 +87,11 @@ public class ReviewListActivity extends AppCompatActivity {
 
     }
 
+    /**
+     * Contains the click listener.
+     *
+     * @param recyclerView
+     */
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, InfoHolder.InfoPass.getReviewList(), mTwoPane));
     }
@@ -118,6 +126,13 @@ public class ReviewListActivity extends AppCompatActivity {
             }
         };
 
+        /**
+         * Unchanged.
+         *
+         * @param parent
+         * @param items
+         * @param twoPane
+         */
         SimpleItemRecyclerViewAdapter(ReviewListActivity parent,
                                       List<Review> items,
                                       boolean twoPane) {
@@ -126,6 +141,13 @@ public class ReviewListActivity extends AppCompatActivity {
             mTwoPane = twoPane;
         }
 
+        /**
+         * Unchanged.
+         *
+         * @param parent
+         * @param viewType
+         * @return
+         */
         @Override
         public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext())
@@ -133,6 +155,12 @@ public class ReviewListActivity extends AppCompatActivity {
             return new ViewHolder(view);
         }
 
+        /**
+         * Unchanged.
+         *
+         * @param holder
+         * @param position
+         */
         @Override
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mIdView.setText(mValues.get(position).getmUserName());
@@ -142,6 +170,11 @@ public class ReviewListActivity extends AppCompatActivity {
             holder.itemView.setOnClickListener(mOnClickListener);
         }
 
+        /**
+         * Unchanged.
+         *
+         * @return
+         */
         @Override
         public int getItemCount() {
             return mValues.size();

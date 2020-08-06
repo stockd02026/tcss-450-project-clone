@@ -55,7 +55,7 @@ public class RegisterFragment extends Fragment {
     }
 
     /**
-     * Contains listener.
+     * Contains listener. gathers regestration information from the user.
      *
      * @param inflater
      * @param container
@@ -92,6 +92,9 @@ public class RegisterFragment extends Fragment {
         return v;
     }
 
+    /**
+     * Listener interface.
+     */
     public interface RegisterFragmentListener {
         public void register(String first, String last, String email, String userName, String pwd);
     }

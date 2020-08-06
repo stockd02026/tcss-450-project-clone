@@ -63,8 +63,11 @@ public class ReviewDetailActivity extends AppCompatActivity {
                     .commit();
         }
     }
-//go back to ReviewListActivity.
-    @Override
+
+    /**
+     *  helper method, returns to ReviewListActivity.
+     */
+       @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home) {

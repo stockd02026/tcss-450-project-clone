@@ -46,6 +46,11 @@ public class ReviewDetailFragment extends Fragment {
     public ReviewDetailFragment() {
     }
 
+    /**
+     * Altered to display user name.
+     *
+     * @param savedInstanceState
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +65,14 @@ public class ReviewDetailFragment extends Fragment {
         }
     }
 
+    /**
+     * Altered to display review information.
+     *
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
