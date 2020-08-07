@@ -97,14 +97,19 @@ public static final String DEVICE_LIST = "devicelist";
     }*/
    public static List<Device> parseDeviceJson(String deviceJson) throws JSONException {
        List<Device> devices = new ArrayList<>();
-       List<Device> dev = DeviceContent.ITEMS;
+
        if (deviceJson != null) {
+           DeviceContent.loadReviews();
+           List<Review> dev = DeviceContent.mReviews;
 
            JSONArray arr = new JSONArray(deviceJson);
 
            for (int i = 0; i < arr.length(); i++) {
+               DeviceContent.loadReviews();
+               dev = DeviceContent.mReviews;
                JSONObject obj = arr.getJSONObject(i);
-               Device device = new Device(obj.getString(Device.DEVICE_NAME), dev.get(i).mReviews);
+               Device device = new Device(obj.getString(Device.DEVICE_NAME), dev);
+               DeviceContent.addItem(device);
                //Log.e("was", Course.ID);
                devices.add(device);
            }

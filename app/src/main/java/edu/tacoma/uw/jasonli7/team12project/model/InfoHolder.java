@@ -30,7 +30,12 @@ public class InfoHolder {
         }
 
         public static void setReviewList(List<Review> reviewList) {
-            mReviewList = reviewList;
+            if (mReviewList.size() > 1) {
+                mReviewList.clear();
+            }
+            for(Review r : reviewList) {
+                mReviewList.add(r);
+            }
         }
 
         public String getEmail() {

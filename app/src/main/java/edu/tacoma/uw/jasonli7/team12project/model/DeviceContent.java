@@ -30,14 +30,9 @@ public class DeviceContent {
 
     private static final int COUNT = 25;
 
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDeviceItem(i));
-        }
-    }
 
-    private static void addItem(Device item) {
+
+    static void addItem(Device item) {
         ITEMS.add(item);
         ITEM_MAP.put(item.getDeviceName(), item);
     }
@@ -47,7 +42,7 @@ public class DeviceContent {
         return new Device("Device: " + String.valueOf(position), mReviews);
     }
 
-    private static void loadReviews() {
+    static void loadReviews() {
 
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 15; i++) {
