@@ -26,7 +26,7 @@ public class DeviceContent {
      */
     public static final Map<String, Device> ITEM_MAP = new HashMap<String, Device>();
 
-    public static final List<Review> mReviews = new ArrayList<Review>();
+    public static  List<Review> mReviews;
 
     private static final int COUNT = 25;
 
@@ -43,7 +43,7 @@ public class DeviceContent {
     }
 
     static void loadReviews() {
-
+        mReviews = new ArrayList<Review>();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < 15; i++) {
 

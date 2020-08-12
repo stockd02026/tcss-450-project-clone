@@ -1,5 +1,6 @@
 package edu.tacoma.uw.jasonli7.team12project.main;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -105,7 +106,13 @@ public class DeviceDetailActivity extends AppCompatActivity implements View.OnCl
      */
     @Override
     public void onClick(View view) {
-        Intent intent = new Intent(this, ReviewListActivity.class);
-        startActivity(intent);
+       // Intent intent = new Intent(this, ReviewListActivity.class);
+       // startActivity(intent);
+        //Device item = (Device) view.getTag();
+        Context context = view.getContext();
+        Intent intent = new Intent(context, ReviewListActivity.class);
+        intent.putExtra(ReviewListActivity.ARG_Device_ID, getIntent().getStringExtra(DeviceDetailFragment.ARG_ITEM_ID));
+
+        context.startActivity(intent);
     }
 }

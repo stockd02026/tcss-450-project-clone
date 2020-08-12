@@ -127,7 +127,7 @@ public class DeviceListActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Device item = (Device) view.getTag();
-                InfoHolder.InfoPass.setReviewList(item.getReviews());
+                //InfoHolder.InfoPass.setReviewList(item.getReviews());
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
                     arguments.putString(DeviceDetailFragment.ARG_ITEM_ID, item.getDeviceName());

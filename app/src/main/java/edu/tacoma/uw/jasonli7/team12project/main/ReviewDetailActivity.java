@@ -54,8 +54,8 @@ public class ReviewDetailActivity extends AppCompatActivity {
             // Create the detail fragment and add it to the activity
             // using a fragment transaction.
             Bundle arguments = new Bundle();
-            arguments.putString(ReviewDetailFragment.ARG_ITEM_ID,
-                    getIntent().getStringExtra(ReviewDetailFragment.ARG_ITEM_ID));
+            arguments.putString(ReviewDetailFragment.ARG_REVIEW_ID,
+                    getIntent().getStringExtra(ReviewDetailFragment.ARG_REVIEW_ID));
             ReviewDetailFragment fragment = new ReviewDetailFragment();
             fragment.setArguments(arguments);
             getSupportFragmentManager().beginTransaction()

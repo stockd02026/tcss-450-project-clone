@@ -19,6 +19,7 @@ import android.widget.TextView;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
 
+import edu.tacoma.uw.jasonli7.team12project.model.DeviceContent;
 import edu.tacoma.uw.jasonli7.team12project.model.InfoHolder;
 import edu.tacoma.uw.jasonli7.team12project.model.Review;
 
@@ -35,11 +36,14 @@ import java.util.List;
  */
 public class ReviewListActivity extends AppCompatActivity {
 
+    public static final String ARG_Device_ID = "device_id";
+
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
      */
     private boolean mTwoPane;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +97,9 @@ public class ReviewListActivity extends AppCompatActivity {
      * @param recyclerView
      */
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, InfoHolder.InfoPass.getReviewList(), mTwoPane));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this,
+                DeviceContent.ITEM_MAP.get(getIntent().getStringExtra(
+                        ReviewListActivity.ARG_Device_ID)).getReviews(), mTwoPane));
     }
 
     public static class SimpleItemRecyclerViewAdapter
@@ -110,7 +116,7 @@ public class ReviewListActivity extends AppCompatActivity {
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
 
-                    arguments.putString(ReviewDetailFragment.ARG_ITEM_ID, item.getmUserName());
+                    arguments.putString(ReviewDetailFragment.ARG_REVIEW_ID, item.getmUserName());
                     ReviewDetailFragment fragment = new ReviewDetailFragment();
                     fragment.setArguments(arguments);
                     mParentActivity.getSupportFragmentManager().beginTransaction()
@@ -119,7 +125,7 @@ public class ReviewListActivity extends AppCompatActivity {
                 } else {
                     Context context = view.getContext();
                     Intent intent = new Intent(context, ReviewDetailActivity.class);
-                    intent.putExtra(ReviewDetailFragment.ARG_ITEM_ID, item.getmUserName());
+                    intent.putExtra(ReviewDetailFragment.ARG_REVIEW_ID, item.getmUserName());
 
                     context.startActivity(intent);
                 }
