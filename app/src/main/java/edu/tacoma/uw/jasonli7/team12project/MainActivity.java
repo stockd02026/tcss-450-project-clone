@@ -2,6 +2,7 @@ package edu.tacoma.uw.jasonli7.team12project;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,6 +31,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setIcon(R.drawable.top);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        toolbar.setTitle("iRate");
 
         mLoginButton =findViewById(R.id.login);
         mLoginButton.setOnClickListener(this);
