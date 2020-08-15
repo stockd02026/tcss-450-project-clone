@@ -12,6 +12,7 @@ import java.util.ArrayList;
 
 import edu.tacoma.uw.jasonli7.team12project.R;
 import edu.tacoma.uw.jasonli7.team12project.model.Device;
+import edu.tacoma.uw.jasonli7.team12project.model.DeviceContent;
 import edu.tacoma.uw.jasonli7.team12project.model.Review;
 
 /**
@@ -82,7 +83,7 @@ public class AddDeviceFragment extends Fragment {
             public void onClick(View v) {
                 String devices = addDev.getText().toString();
 
-                Device device = new Device(devices, new ArrayList<Review>());
+                Device device = new Device(devices, DeviceContent.mReviews, DeviceContent.mockPrice());
                 if (mAddDeviceListener != null) {
                     mAddDeviceListener.addDevice(device);
                 }

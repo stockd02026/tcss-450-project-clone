@@ -24,15 +24,17 @@ public class Device implements Serializable {
     private int mNumberOfReviews;
     private double mAvgRate;
     private List<Review> mReviews;
+    private double mPrice;
 public static final String DEVICE_NAME = "devicename";
 public static final String DEVICE_LIST = "devicelist";
 
 
-    public  Device(String name, List<Review> reviews) {
+    public  Device(String name, List<Review> reviews, double price) {
         mDeviceName = name;
         mNumberOfReviews = reviews.size();
         mReviews = reviews;
         mAvgRate = calcAvg(mReviews);
+        mPrice = price;
     }
 
 
@@ -65,6 +67,10 @@ public static final String DEVICE_LIST = "devicelist";
 
     public double getAvgRate() {
         return mAvgRate;
+    }
+
+    public double getPrice() {
+        return mPrice;
     }
 
 
@@ -108,7 +114,7 @@ public static final String DEVICE_LIST = "devicelist";
                DeviceContent.loadReviews();
                dev = DeviceContent.mReviews;
                JSONObject obj = arr.getJSONObject(i);
-               Device device = new Device(obj.getString(Device.DEVICE_NAME), dev);
+               Device device = new Device(obj.getString(Device.DEVICE_NAME), dev, DeviceContent.mockPrice());
                DeviceContent.addItem(device);
                //Log.e("was", Course.ID);
                devices.add(device);

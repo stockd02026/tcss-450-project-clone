@@ -185,7 +185,8 @@ public class DeviceListActivity extends AppCompatActivity {
         public void onBindViewHolder(final ViewHolder holder, int position) {
             holder.mIdView.setText(mValues.get(position).getDeviceName());
             DecimalFormat format = new DecimalFormat("##.00");
-            holder.mContentView.setText(String.valueOf(format.format(mValues.get(position).getAvgRate())));
+            holder.mContentView.setText(String.valueOf(format.format(mValues.get(position).getAvgRate())+
+                    "     $ " + String.valueOf(format.format(mValues.get(position).getPrice()))));
 
             holder.itemView.setTag(mValues.get(position));
             holder.itemView.setOnClickListener(mOnClickListener);

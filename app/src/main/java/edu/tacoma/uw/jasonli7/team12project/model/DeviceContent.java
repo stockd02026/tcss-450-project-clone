@@ -39,7 +39,7 @@ public class DeviceContent {
 
     private static Device createDeviceItem(int position) {
         loadReviews();
-        return new Device("Device: " + String.valueOf(position), mReviews);
+        return new Device("Device: " + String.valueOf(position), mReviews, 100.56);
     }
 
     static void loadReviews() {
@@ -88,5 +88,9 @@ public class DeviceContent {
         public String toString() {
             return content;
         }
+    }
+    public static double mockPrice() {
+        Random q = new Random();
+        return q.nextDouble() * 1000;
     }
 }
